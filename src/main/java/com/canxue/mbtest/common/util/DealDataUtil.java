@@ -27,6 +27,8 @@ public class DealDataUtil {
             }
             Class<?> aClass = data.getClass();
             Field[] fields = aClass.getDeclaredFields();
+            // todo 待校验 queryWrapper 放置进1=1 放置后续的条件拼接发生错误
+
             for (Field field : fields) {
                 Annotation[] annotations = field.getAnnotations();
                 Object fieldValue = getFieldValue(data, field);
@@ -42,14 +44,14 @@ public class DealDataUtil {
 
                     continue;
                 }
-                // 处理时间起始
+                // 起始参数
                 if (field.isAnnotationPresent(ParamMin.class)) {
                     ParamMin annotation = field.getAnnotation(ParamMin.class);
                     String clumnName = annotation.value();
                     queryWrapper.ge(clumnName, fieldValue);
                     continue;
                 }
-                // 处理时间结束
+                // 结束参数
                 if (field.isAnnotationPresent(ParamMax.class)) {
                     ParamMax annotation = field.getAnnotation(ParamMax.class);
                     String value = annotation.value();
@@ -73,6 +75,11 @@ public class DealDataUtil {
                         if (result.size() == 1) {
                             queryWrapper.eq(clumnName, result.get(0));
                         }
+                        // 处理并拼接sql语句
+                        // 第一个条件需要使用and 来进行拼接,后续的才应该为or拼接
+                        String first = result.remove(0);
+                        queryWrapper.eq(clumnName, first);
+                        // 后续条件使用or 来进行拼接.
                         for (String or : result) {
                             queryWrapper.or();
                             queryWrapper.eq(clumnName, or);
