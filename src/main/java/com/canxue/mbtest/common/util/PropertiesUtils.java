@@ -13,6 +13,9 @@ import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * properties处理工具类
+ */
 public class PropertiesUtils {
     private static Logger log = LoggerFactory.getLogger(PropertiesUtils.class);
 

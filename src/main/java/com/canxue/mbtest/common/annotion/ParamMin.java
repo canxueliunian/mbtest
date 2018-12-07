@@ -5,13 +5,13 @@ import java.lang.annotation.*;
 
 /**
  * Created by viruser on 2017/6/20.
- * 使用于需要进行时间大于等于的字段尚
- * 其中balue值为数据库对应字段的名称
+ * <= 比较场景
+ * * value为数据表对应列名,不能为空
  */
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface ParamMin {
 
-    String value() ;
+    String value();
 }

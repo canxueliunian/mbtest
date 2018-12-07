@@ -2,16 +2,20 @@ package com.canxue.mbtest.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
+
 import java.time.LocalDate;
+
 import com.baomidou.mybatisplus.annotation.TableId;
+
 import java.io.Serializable;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author canxue
@@ -54,6 +58,7 @@ public class Book extends Model<Book> {
 
     /**
      * 入库时间
+
      */
     private LocalDate entryDate;
 

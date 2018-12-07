@@ -18,6 +18,7 @@ import java.util.List;
 
 /**
  * Created by lishuntao on 2018/11/26.
+ * 反射处理条件 , 生成queryWrapper工具类
  */
 public class DealDataUtil {
     public static void DealData(QueryWrapper queryWrapper, Object data) {

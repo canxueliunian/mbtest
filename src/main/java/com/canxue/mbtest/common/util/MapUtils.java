@@ -165,7 +165,8 @@ public class MapUtils {
     }
 
     /**
-     * 检测map中是否有其List中的属性名称
+     * 检测map结构中key值是否全部包含
+     * 传入的list中的属性值
      *
      * @param obj
      * @param list
@@ -244,7 +245,7 @@ public class MapUtils {
     }
 
     /**
-     * 判断传入的map是否为null或者长度为0
+     * 判断传入的容器是否为null或者长度为0
      *
      * @param object
      * @return

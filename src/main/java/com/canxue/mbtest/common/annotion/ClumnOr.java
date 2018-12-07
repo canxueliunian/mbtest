@@ -5,12 +5,10 @@ import java.lang.annotation.*;
 
 /**
  * Created by viruser on 2017/6/20.
- * 使用于需要模糊查询的属性上,
- * 其中value值为查询的字段名称--数据库字段名称
- * 设置value的话则去value的值, 不设置的话则反射属性名生成
- *
- * 约定: 如果设置value的话则把其作为列名,当传递一个值时,
- * 按照and 来进行拼接, 当传递多个的时候, 按照字符串逗号分隔的形式来进行分割.
+ * 用于需要or查询拼接的属性上
+ * value--表列名, 为空时,驼峰转换属性名得出
+ * ---
+ * 传入多个数据使用,分割,后台会进行解析处理
  */
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)

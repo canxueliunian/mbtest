@@ -5,6 +5,9 @@ import org.apache.ibatis.annotations.Select;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 查询数据库表结构
+ */
 public interface GeneratorMapper {
     @Select("select table_name tableName, engine, table_comment tableComment, create_time createTime from information_schema.tables where table_schema = (select database())")
     List<Map<String, Object>> list();
