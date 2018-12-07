@@ -1,6 +1,7 @@
 package com.canxue.mbtest;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.canxue.mbtest.common.util.PropertiesUtils;
 import com.canxue.mbtest.entity.Student;
 import com.canxue.mbtest.mapper.GeneratorMapper;
@@ -56,12 +57,15 @@ public class MbtestApplicationTests {
     StudentService studentService;
     @Test
     public void testStudent(){
-        Student student = new Student();
-        student.setName("yiyi");
-        student.setAge(16);
-        student.setEmail("yiyi@qq.com");
-        studentService.save(student);
-        System.out.println(student.getId());
+
+        QueryWrapper<Student> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("sex",0);
+        queryWrapper.apply("(name ='陈家琦' or name ='彭娅')");
+        queryWrapper.lt("age",10);
+        List<Student> list = studentService.list(queryWrapper);
+        System.out.println();
+        System.out.println();
+
     }
 
 
