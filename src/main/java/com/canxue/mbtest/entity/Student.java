@@ -2,6 +2,7 @@ package com.canxue.mbtest.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import com.baomidou.mybatisplus.annotation.TableId;
 
@@ -76,6 +77,8 @@ public class Student extends Model<Student> {
      */
     @ClumnLike
     private String everName;
+    @TableLogic
+    private Integer status;
 
 
     @Override

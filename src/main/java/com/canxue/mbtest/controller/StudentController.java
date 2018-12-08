@@ -8,6 +8,7 @@ import com.canxue.mbtest.common.util.DealDataUtil;
 import com.canxue.mbtest.entity.Student;
 import com.canxue.mbtest.service.StudentService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.stereotype.Controller;
@@ -51,6 +52,7 @@ public class StudentController extends BaseController {
 
     /**
      * 新增接口
+     *
      * @param student
      * @return
      */
@@ -63,6 +65,7 @@ public class StudentController extends BaseController {
 
     /**
      * 修改接口
+     *
      * @param student
      * @return
      */
@@ -70,8 +73,21 @@ public class StudentController extends BaseController {
     public String update(Student student) {
 
         studentService.update(student, null);
-        logger.info("插入结束");
+        logger.info("修改结束");
         return ("插入结束, 新增值的主键id为" + student.getId());
+    }
+
+    /**
+     * 修改接口
+     *
+     * @return
+     */
+    @GetMapping("del/{id}")
+    public String update(@PathVariable long id) {
+
+        boolean b = studentService.removeById(id);
+        logger.info("删除结束");
+        return ("删除结果" + b);
     }
 
 
