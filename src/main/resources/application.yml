@@ -16,14 +16,10 @@ mybatis-plus:
       logic-not-delete-value: 0                  #逻辑删除字段值, 配合注解使用 0 为正常状态
     refresh: true
 
-
-
-
-
-
 # Logger Config
 logging:
   level:
     com.canxue.mbtest: debug
     java.sql: debug
     org.apache.ibatis: info
+

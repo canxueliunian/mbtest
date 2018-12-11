@@ -43,7 +43,6 @@ public class StudentController extends BaseController {
         Page<Student> page = getPage();
         QueryWrapper<Student> wrapper = new QueryWrapper<>();
         DealDataUtil.DealData(wrapper, student);
-        // womenxinjian yige neirong ba dade , ni shuo ni yinggai shi xiangyao yixie zheg de dongxi de a
         IPage<Student> resultPage = studentService.page(page, wrapper);
         logger.info("查询结束");
         return (jsonPage(resultPage));
@@ -71,8 +70,7 @@ public class StudentController extends BaseController {
      */
     @GetMapping("update")
     public String update(Student student) {
-
-        studentService.update(student, null);
+        boolean b = studentService.updateById(student);
         logger.info("修改结束");
         return ("插入结束, 新增值的主键id为" + student.getId());
     }

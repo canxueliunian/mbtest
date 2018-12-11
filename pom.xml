@@ -82,8 +82,7 @@
             <artifactId>guava</artifactId>
             <version>11.0.2</version>
         </dependency>
-        <!--使用gradle进行导入-->
-        <!--compile group: 'com.google.guava', name: 'guava', version: '11.0.2'-->
+
 
 
         <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
@@ -115,15 +114,13 @@
             <groupId>org.xmlunit</groupId>
             <artifactId>xmlunit-core</artifactId>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>org.yaml</groupId>-->
-            <!--<artifactId>snakeyaml</artifactId>-->
-            <!--<version>1.17</version>-->
-        <!--</dependency>-->
+
         <dependency>
             <groupId>org.yaml</groupId>
             <artifactId>snakeyaml</artifactId>
         </dependency>
+        <!--使用gradle进行导入-->
+        <!--compile group: 'com.google.guava', name: 'guava', version: '11.0.2'-->
 
 
 
@@ -137,6 +134,8 @@
             </plugin>
         </plugins>
     </build>
+
+
 
 
 </project>

@@ -15,4 +15,5 @@ public class MbtestApplication {
     public static void main(String[] args) {
         SpringApplication.run(MbtestApplication.class, args);
     }
+
 }

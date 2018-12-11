@@ -50,20 +50,6 @@ public class BookController extends BaseController {
         QueryWrapper<Book> wrapper = new QueryWrapper<>(book);
 
 
-        wrapper.eq("type", 1);
-        Map<String, Object> queryMap = MapUtils.transBean2Map(book);
-
-        wrapper = new QueryWrapper(queryMap);
-
-        // 处理name like 字段
-        queryMap.remove("name");
-        if (!StringUtils.isEmpty(book.getBookName())) {
-            wrapper.like("book_name", book.getBookName());
-        }
-
-        wrapper.like("name", "王");
-        wrapper.gt("age", 20);
-        wrapper.lt("age", 22);
 //
 //        DealDataUtil.DealData(wrapper, book);
         // womenxinjian yige neirong ba dade , ni shuo ni yinggai shi xiangyao yixie zheg de dongxi de a
