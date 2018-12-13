@@ -53,33 +53,32 @@ public class Student extends Model<Student> {
      */
     private Integer age;
 
-
     /**
-     * 辅助字段 年龄min
+     * 年龄查询起始值
      */
     @TableField(exist = false)
     @ParamMin("age")
     private Integer ageMin;
-
     /**
-     * 辅助字段 年龄max
+     * 年龄查询终止值
      */
     @TableField(exist = false)
     @ParamMax("age")
     private Integer ageMax;
 
+
+    /**
+     * 曾用名
+     */
+    private String everName;
+
     /**
      * 邮箱
      */
     private String email;
-    /**
-     * 曾用名
-     */
-    @ClumnLike
-    private String everName;
+
     @TableLogic
     private Integer status;
-
 
 
     @Override

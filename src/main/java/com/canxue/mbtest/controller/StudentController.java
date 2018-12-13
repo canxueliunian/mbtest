@@ -34,6 +34,7 @@ public class StudentController extends BaseController {
 
     /**
      * 普通的分页查询接口
+     * 做 age 的区间查询, 查询大于20 小于23的student
      *
      * @param student
      * @return
